@@ -33,8 +33,24 @@
 
 
 
+
+
+
+
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Your Profile</a></li>
+
+
+          <li id="login">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <button><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></button>
+              <button><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
+            <% else %>
+              <button><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></button>
+              <button><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></button>
+            <% end %>
+          </li>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -99,6 +115,18 @@
           </div>
           <div class="container">
             <br>
+
+
+
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
+
+
+
             <%= yield %>
           </div>
       </div>
@@ -106,7 +134,6 @@
 
   </div>
   <!-- /#wrapper -->
-
 
   <!-- Remember: javascript tag before adding jquery scripts -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
