@@ -97,7 +97,10 @@
                   </div>
               </div>
           </div>
-        <%= yield %>
+          <div class="container">
+            <br>
+            <%= yield %>
+          </div>
       </div>
       <!-- /#page-content-wrapper -->
 
@@ -106,7 +109,6 @@
 
 
   <!-- Remember: javascript tag before adding jquery scripts -->
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js' %>
 
