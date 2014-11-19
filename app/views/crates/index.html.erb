@@ -1,0 +1,27 @@
+<h1>Listing crates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crates.each do |crate| %>
+      <tr>
+        <td><%= crate.name %></td>
+        <td><%= crate.category_id %></td>
+        <td><%= link_to 'Show', crate %></td>
+        <td><%= link_to 'Edit', edit_crate_path(crate) %></td>
+        <td><%= link_to 'Destroy', crate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crate', new_crate_path %>
