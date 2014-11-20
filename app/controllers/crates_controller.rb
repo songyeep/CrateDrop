@@ -3,6 +3,7 @@ class CratesController < ApplicationController
 
   respond_to :html
 
+
   def index
     @crates = Crate.all
     respond_with(@crates)
