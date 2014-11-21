@@ -10,6 +10,7 @@ class CratesController < ApplicationController
   end
 
   def show
+    @items = @crate.items
     respond_with(@crate)
   end
 

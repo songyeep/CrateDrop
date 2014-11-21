@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="container col-md-4" id="crate-desc">
-    <p><%= @crate.name %>
+  <div class="col-md-4" id="crate-desc">
+    <h2><%= @crate.name %></h2>
     <p><%= @crate.description %>
   <div>
 
-  <div class="container .col-md-4 .col-md-4 .col-md-4">
-    <% @crate.items.each do |item| %>
-      <p id="image-temp"><%= image_tag("rb-nes.jpg") %></p>
-      <p><a href="/crates/<%= item.id %>"></a><%= item.name %></p>
-      <p><%= item.price %></p>
+  <div class=".col-md-4 .col-md-4 .col-md-4">
+    <% @items.each do |item| %>
+      <p id="image-temp"><%= image_tag item.image.url %></p>
+      <p><a href="/crates/<%= item.id %>"></a><%= item.name %>  (<%= number_to_currency(item.price, precision: 0) %>)</p>
     <% end %>
   <div>
 
