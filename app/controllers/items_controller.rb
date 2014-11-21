@@ -14,10 +14,13 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    respond_with(@item)
+    @crates = Crate.all
+
+    render 'new', :locals => {item: @item, crates: @crates }
   end
 
   def edit
+    @crates = Crate.all
   end
 
   def create
@@ -43,6 +46,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :price, :image)
+      params.require(:item).permit(:name, :description, :price, :image, :crate_id)
     end
 end

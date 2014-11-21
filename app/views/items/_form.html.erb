@@ -24,8 +24,8 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :crate_id %><br>
-    <%= f.number_field :crate_id %>
+    <%= f.label :crate %><br>
+    <%= f.select(:crate_id, options_from_collection_for_select(@crates, 'id', 'name') ) %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
