@@ -1,9 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @crate.name %>
-</p>
+<div class="row">
+  <div class="container col-md-4" id="crate-desc">
+    <p><%= @crate.name %>
+    <p><%= @crate.description %>
+  <div>
 
-<%= link_to 'Edit', edit_crate_path(@crate) %> |
+  <div class="container .col-md-4 .col-md-4 .col-md-4">
+    <% @crate.items.each do |item| %>
+      <p id="image-temp"><%= image_tag("rb-nes.jpg") %></p>
+      <p><a href="/crates/<%= item.id %>"></a><%= item.name %></p>
+      <p><%= item.price %></p>
+    <% end %>
+  <div>
+
+</div>
+
+
+<p><%= link_to 'Edit', edit_crate_path(@crate) %> |
 <%= link_to 'Back', crates_path %>

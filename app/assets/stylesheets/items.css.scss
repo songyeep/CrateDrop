@@ -1,9 +1,11 @@
-// Place all the styles related to the Categories controller here.
+// Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #crate-temp {
   width: 400px;
+
 
 }
 
@@ -12,7 +14,9 @@ img {
   max-height: 100%;
 }
 
-.crate-list {
+.item-list {
   float: left;
   padding: 5px;
+  border: solid gray 3px;
 }
+

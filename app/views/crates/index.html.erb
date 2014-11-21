@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Category Id</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= crate.name %></td>
         <td><%= crate.category_id %></td>
+        <td><%= crate.description %></td>
         <td><%= link_to 'Show', crate %></td>
         <td><%= link_to 'Edit', edit_crate_path(crate) %></td>
         <td><%= link_to 'Destroy', crate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
