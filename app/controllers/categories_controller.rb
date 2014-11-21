@@ -9,7 +9,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    respond_with(@category)
+    @crates = @category.crates
+    render 'show', :locals => { crates: @crates }
   end
 
   def new

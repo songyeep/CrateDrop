@@ -1,12 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% @category.crates.each do |crate| %>
+<% @crates.each do |crate| %>
   <div class="crate-list"><a href="/crates/<%= crate.id%>"><%= crate.name %></a></p>
   <p id="crate-temp"><%= image_tag("crate.jpg") %></p></div>
 <% end %>
-
-
-
-<!--
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %> -->
