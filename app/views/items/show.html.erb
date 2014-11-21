@@ -17,13 +17,13 @@
 </p>
 
 <p>
-  <strong>Crate ID:</strong>
-  <%= @item.crate_id %>
+  <strong>Crate :</strong>
+  <%= @item.crate.name %>
 </p>
 
 <p id="crate-temp">
   <strong>Image:</strong>
-  <%= image_tag("rb-nes.jpg") %>
+  <%= image_tag(@item.image) %>
 </p>
 </div>
 

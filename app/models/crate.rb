@@ -1,4 +1,4 @@
 class Crate < ActiveRecord::Base
-  has_one :category
+  belongs_to :category
   has_many :items
 end
