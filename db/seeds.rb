@@ -24,4 +24,6 @@ box7 = Crate.create(name: "Beer & Cider", category: cat4)
 box8 = Crate.create(name: "The Hard Stuff", category: cat4)
 box9 = Crate.create(name: "Mash Box", category: cat7)
 
-# Item.create(name: 'hi', price: 20000, description: 'waddup', crate: box1, remote_image_url: 'http://sprudge.com/wp-content/uploads/2013/10/cat-in-a-box.jpg')
+Item.create(name: "Iron Stark", price: 30, description: )
+
+Item.create(name: 'hi', price: 20000, description: 'waddup', crate: box1, remote_image_url: 'http://sprudge.com/wp-content/uploads/2013/10/cat-in-a-box.jpg')
