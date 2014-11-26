@@ -25,7 +25,11 @@
   src: url("/topsecret-stamp.ttf") format("truetype");
 }
 
-body, p, li, a {
+body {
+  background-color: #DBD8D6;
+}
+
+p, li, a {
   font-family: "Arial";
   font-size: 20px;
 }
