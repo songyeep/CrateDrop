@@ -1,8 +1,12 @@
 class CratesController < ApplicationController
   before_action :set_crate, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
+  def checkout
+    @items = @crate.items
+    respond_with(@crate)
+  end
 
   def index
     @crates = Crate.all
@@ -44,6 +48,6 @@ class CratesController < ApplicationController
     end
 
     def crate_params
-      params.require(:crate).permit(:name)
+      params.require(:crate).permit(:crate, :name, :description)
     end
 end

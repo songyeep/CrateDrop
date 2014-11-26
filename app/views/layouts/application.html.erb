@@ -3,7 +3,7 @@
 <head>
   <title>CrateDrop</title>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 
 </head>
@@ -28,13 +28,6 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
-
-
-
-
-
-
-
 
         <ul class="nav navbar-nav navbar-right">
 
@@ -67,78 +60,22 @@
   </nav>
 
 
-  <div id="wrapper">
 
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-          <ul class="sidebar-nav">
-              <li class="sidebar-brand">
-                  <a href="#">
-                      Crate Types
-                  </a>
-              </li>
-              <li>
-                  <a href="/categories/1">Geek</a>
-              </li>
-              <li>
-                  <a href="/categories/2">Retro</a>
-              </li>
-              <li>
-                  <a href="/categories/3">Orient</a>
-              </li>
-              <li>
-                  <a href="/categories/4">Booze</a>
-              </li>
-              <li>
-                  <a href="/categories/5">TLC</a>
-              </li>
-              <li>
-                  <a href="/categories/5">Survival</a>
-              </li>
-              <li>
-                  <a href="/categories/6">Mash Crates</a>
-              </li>
-
-          </ul>
-      </div>
-      <!-- /#sidebar-wrapper -->
-
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-lg-12">
-                      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Explore Crate Types</a>
-                  </div>
-              </div>
-          </div>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 
 
+<div class="contents">
+  <%= yield %>
+</div>
 
-          <div>
-            <br>
-
-
-
-            <% if notice %>
-              <p class="alert alert-success"><%= notice %></p>
-            <% end %>
-            <% if alert %>
-              <p class="alert alert-danger"><%= alert %></p>
-            <% end %>
-
-
-
-            <%= yield %>
-          </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
 
   <!-- Remember: javascript tag before adding jquery scripts -->
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js' %>
 
   <!-- Menu Toggle Script -->
