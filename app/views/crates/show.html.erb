@@ -1,20 +1,36 @@
+<body ng-app="checkboxApp">
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="col-md-4" id="crate-desc">
+  <div class="col-md-4">
     <h2><%= @crate.name %></h2>
     <p><%= @crate.description %>
   <div>
 
-  <div class=".col-md-4 .col-md-4 .col-md-4">
-    <% @items.each do |item| %>
-      <p id="image-temp"><%= image_tag item.image.url %></p>
-      <p><a href="/crates/<%= item.id %>"></a><%= item.name %>  (<%= number_to_currency(item.price, precision: 0) %>)</p>
-    <% end %>
-  <div>
+<div ng-controller="checkboxCtl">
+
+  <table id="items-table">
+    <tr>
+      <th>Status</th>
+      <th>Item Name</th>
+      <th>Item Price</th>
+    </tr>
+    <tr ng-repeat="item in items">
+      <td><input type="checkbox" checkbox-group ng-model="item.checked" /></td>
+      <td>{{item.name}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+  </table>
+
+  <br><p>
+
+  Total Price = {{ totalPrice() }}</p>
 
 </div>
 
 
 <p><%= link_to 'Edit', edit_crate_path(@crate) %> |
 <%= link_to 'Back', crates_path %>
+
+</body>

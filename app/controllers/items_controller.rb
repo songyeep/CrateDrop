@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @items = Item.all
@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @items = Item.all
     respond_with(@item)
   end
 
