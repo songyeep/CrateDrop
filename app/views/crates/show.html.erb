@@ -2,33 +2,34 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="col-md-4">
-    <h2><%= @crate.name %></h2>
-    <p><%= @crate.description %>
-  <div>
+  <h2><%= @crate.name %></h2>
+  <p><%= @crate.description %>
+
 
 <div ng-controller="checkboxCtl">
 
   <table id="items-table">
     <tr>
       <th>Status</th>
+      <th>Item Image</th>
       <th>Item Name</th>
       <th>Item Price</th>
+
     </tr>
     <tr ng-repeat="item in items">
-      <td><input type="checkbox" checkbox-group ng-model="item.checked" /></td>
+      <td><input type="checkbox" checkbox-group ng-model="item.checked" /> Put in Crate</td>
+      <td id="img-box"><img src="{{item.image.image.url}}"></td>
       <td>{{item.name}}</td>
       <td>{{item.price}}</td>
+
     </tr>
   </table>
 
-  <br><p>
-
-  Total Price = {{ totalPrice() }}</p>
+  <br><p>Total Price = {{ totalPrice() }}</p>
 
 </div>
 
+<button><a href="/checkout">Buy Crate</a></button>
 
 <p><%= link_to 'Edit', edit_crate_path(@crate) %> |
 <%= link_to 'Back', crates_path %>

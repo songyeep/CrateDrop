@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.all
     respond_with(@item)
   end
 
