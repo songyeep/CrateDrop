@@ -15,6 +15,21 @@
  */
 
 
+@font-face {
+  font-family: "Top Secret";
+  src: url("/topsecret.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Top Secret Stamp";
+  src: url("/topsecret-stamp.ttf") format("truetype");
+}
+
+body, p, li, a {
+  font-family: "Arial";
+  font-size: 20px;
+}
+
 #login {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -24,3 +39,48 @@ div.contents {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.navbar {
+  color: white;
+  background-color: black;
+}
+
+.navbar-brand {
+  font-family: "Helvetica";
+  font-size: 30px;
+  color: #7C3847;
+}
+
+.glyphicon:hover {
+  color: #20D1AC;
+}
+
+p.header {
+  font-family: "Top Secret";
+  font-size: 90px;
+  color: black;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p.under-header {
+  font-family: "Top Secret Stamp";
+  font-size: 25px;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+li#login > button {
+  margin: 0;
+  background-color: black;
+  color: white;
+  border: black;
+}
+
+.glyphicon {
+  color: white;
+}
+
