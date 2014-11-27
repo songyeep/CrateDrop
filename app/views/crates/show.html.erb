@@ -14,7 +14,14 @@
 
     <div class="col-md-4 left-thumbnails">
       <h1><%= @crate.name %></h1>
-      <button><a href="/checkout">Buy Crate</a></button>
+      <%= form_for(@unique_crate) do |f| %>
+        <input type="hidden" name="unique_crate[item_ids][]" value="{{ item.id }}" ng-repeat="item in items | filter:{checked: true}">
+        <input type="hidden" name="unique_crate[crate_id]" value="<%= @crate.id %>">
+        <%= f.submit "Buy Crate" %>
+      <% end %>
+
+
+      </form>
       <div class="crate-background">
         <div ng-repeat="item in items | filter:{checked:true}">
             <img id="left-thumbnail-img" src="{{item.image.url}}" style="transform:rotate({{item.rotation}}deg)">
@@ -41,6 +48,7 @@
                 <p>{{item.description}}</p>
                 <p>{{item.crate_id}}</p>
                 <p>{{item.price}}</p>
+
               </div>
             </div>
           </label>
