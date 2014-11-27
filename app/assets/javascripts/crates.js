@@ -20,16 +20,10 @@ app.controller("checkboxCtl", ["$scope", "$http", function($scope, $http) {
       $scope.items = data.items;
       $scope.items.forEach(function(item) {
         item.checked = true;
+        item.rotation = Math.floor(Math.random() * 30 - 15)
       });
     }).
     error(function() {
 
     });
 }]);
-
-$( document ).ready(function() {
-  $( "#unload-btn" ).click(function() {
-    $( ".thumbnail" ).fadeTo( "slow" , 0.5, function() {
-    });
-  });
-});
