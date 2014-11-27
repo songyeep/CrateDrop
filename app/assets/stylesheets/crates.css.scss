@@ -38,7 +38,7 @@ div.thumbnail-image {
 #scroll-content {
   height: 400px;
   overflow: scroll;
-  border: 1px solid #bbb
+  border-radius: 10px;
 }
 
 .left-thumbnails {
@@ -63,5 +63,9 @@ div.thumbnail-image {
   padding: 25px;
 }
 
+
+#item-contents {
+  color: black;
+}
 
 

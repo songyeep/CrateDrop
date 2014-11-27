@@ -25,14 +25,24 @@
   src: url("/topsecret-stamp.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Coolvetica";
+  src: url("/coolvetica.ttf") format("truetype");
+}
+
 body {
   background-color: #DBD8D6;
 }
 
-p, li, a {
-  font-family: "Arial";
-  font-size: 20px;
+p, li, a, h1, h3 {
+  font-family: "Coolvetica";
 }
+
+p, a {
+  font-size: 18px;
+}
+
+
 
 #login {
   padding-top: 15px;
@@ -49,10 +59,13 @@ div.contents {
   background-color: black;
 }
 
+a.navbar-link {
+  color: white;
+}
+
 .navbar-brand {
-  font-family: "Helvetica";
   font-size: 30px;
-  color: #7C3847;
+  color: white;
 }
 
 .glyphicon:hover {
@@ -87,3 +100,5 @@ li#login > button {
 .glyphicon {
   color: white
 }
+
+

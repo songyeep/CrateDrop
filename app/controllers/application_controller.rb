@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-
-
+  @last_crate = UniqueCrate.last.id
 
 end

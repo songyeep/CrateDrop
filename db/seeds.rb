@@ -1,20 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+cat1 = Category.create(name: "Geek", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/MQMS5eNegoJCGNT/Dope-Yoda_137.jpg")
+cat2 = Category.create(name: "Retro", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/Tx2SpGNsEmbCi4W/retro_catalogue_new__61398.1413391535.1280.1280.jpg")
+cat3 = Category.create(name: "Orient", image: "http://www.dollsofindia.com/images/products/japanese-fans/paper-fan-EA93_l.jpg")
+cat4 = Category.create(name: "Booze", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/YQfVWb6FXn4QVoj/I%20hAz%20the%20Beerz.jpg")
+cat5 = Category.create(name: "TLC", image: "http://barcelonasalon-spa.com/wp-content/uploads/2012/12/spa5.jpg")
+cat6 = Category.create(name: "Survival", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/dI1xojOzJmDPidp/annihilation_composition_spam_s__44428.1412645174.702.702.jpg")
+cat7 = Category.create(name: "Mash Crates", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/iywZPbehAQBdbhK/mysterbox.jpg")
 
-cat1 = Category.create(name: "Geek")
-cat2 = Category.create(name: "Retro")
-cat3 = Category.create(name: "Orient")
-cat4 = Category.create(name: "Booze")
-cat5 = Category.create(name: "TLC")
-cat6 = Category.create(name: "Survival")
-cat7 = Category.create(name: "Mash Crates")
-
-box1 = Crate.create(name: "Comics & Anime", category: cat1)
+box1 = Crate.create(name: "Comics & Anime", category: cat1, image: 'https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/4jQrrBKbR5qEBy9/Geek%20Crate%20Cover.png')
 box2 = Crate.create(name: "Sci-Fi", category: cat1)
 box3 = Crate.create(name: "60's Music", category: cat2)
 box4 = Crate.create(name: "Games", category: cat2)
@@ -23,8 +15,6 @@ box6 = Crate.create(name: "Chinese", category: cat3)
 box7 = Crate.create(name: "Beer & Cider", category: cat4)
 box8 = Crate.create(name: "The Hard Stuff", category: cat4)
 box9 = Crate.create(name: "Mash Box", category: cat7)
-
-# Item.create(name: "Iron Stark", price: 30, description:"")
 
 Item.create(name: 'Captain America Inspiration Poster', price: 10, description: 'Little boys are just super heroes in disguise', crate: box1, remote_image_url: 'http://media-cache-ak0.pinimg.com/736x/16/ad/9d/16ad9d3f51c79272acc02e3cd7875dcf.jpg')
 Item.create(name: 'Limited Edition Marvel Universe Wallet', price: 15, description: 'Hand-made Montana Bulls Leather wallet with decades of Marvel comics collage inside', crate: box1, remote_image_url: 'http://ecx.images-amazon.com/images/I/81hqVgPJrLL._SL1500_.jpg')
@@ -64,7 +54,7 @@ Item.create(name: 'English Cider Apple Happy Meal', price: 25, description: 'Uni
 Item.create(name: 'Craft Beer Bottle Collection', price: 25, description: 'A selection on various craft beers from around the world', crate: box7, remote_image_url: 'http://www.thecirclehanoverpa.com/wp-content/uploads/2014/06/Craft-Beer-Bottles.png')
 Item.create(name: 'Beer Will Change The World', price: 5, description: 'A poster that just about says it all', crate: box7, remote_image_url: 'https://microbeerofthemonthclubs.com/wp-content/uploads/2014/03/craft-beer-clubs.jpg')
 Item.create(name: 'Hard Cider Homebrew Kit', price: 20, description: 'Make your own Cider at home to share with friends and family on any occasion', crate: box7, remote_image_url: 'http://media.fbxcdn.com/pic/p6785_column_grid_12.jpg')
-Item.create(name: 'I Love Scrumpy T-shirt', price: 10, description: 'A t-shirt that says it all.', crate: box7, remote_image_url: 'http://media.fbxcdn.com/pic/p6785_column_grid_12.jpg')
+Item.create(name: 'I Love Scrumpy T-shirt', price: 10, description: 'A t-shirt that says it all.', crate: box7, remote_image_url: 'http://ecx.images-amazon.com/images/I/41mNFs9t4PL._SX342_.jpg')
 Item.create(name: 'Big Boss Bottle Opener', price: 15, description: 'A bottle opener only for Bossses', crate: box7, remote_image_url: 'http://images.cdn.bigcartel.com/bigcartel/product_images/142839595/max_h-1000+max_w-1000/image.jpg')
 
 Item.create(name: 'The Whiskey Wedge', price: 10, description: 'Kiss goodbye to depressing watered-down whisky. Comes with a hefty old-fashioned tumbler and silicone mould Smaller surface area so it melts distinctly slower than regular cubes. Also works just as well with all of your other favourite spirits. Helps whisky go down even smoother', crate: box8, remote_image_url: 'http://cdn.shopify.com/s/files/1/0064/9302/products/whiskey-wedge-02_grande.jpg')
@@ -74,34 +64,4 @@ Item.create(name: 'Royal Dragon Vodka', price: 20, description: 'Royal Dragon Vo
 Item.create(name: 'The Shaken Chemist Cocktail Kit', price: 15, description: ' With the Shaken Chemist Cocktail Kit you can finally treat Mixology like the experimental science it is.', crate: box8, remote_image_url: 'http://media.fbxcdn.com/pic/p6545_column_grid_12.jpg')
 Item.create(name: 'Blade Runner Whiskey Glass', price: 10, description: 'I drink Sebastian, therefore I am', crate: box8, remote_image_url: 'http://media.fbxcdn.com/pic/p4346_column_grid_12.jpg')
 Item.create(name: 'Broadwalk Empire Bottle Artwork', price: 10, description: 'High quality giclée digital print on 230gsm matte paper (each is made to order)', crate: box8, remote_image_url: 'http://www.firebox.com/pic/p6218_column_grid_12.jpg')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
