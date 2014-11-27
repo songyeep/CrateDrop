@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126141450) do
+ActiveRecord::Schema.define(version: 20141127102004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 20141126141450) do
     t.integer  "crate_id"
     t.string   "image"
   end
+
+  create_table "items_unique_crates", id: false, force: true do |t|
+    t.integer "item_id",         null: false
+    t.integer "unique_crate_id", null: false
+  end
+
+  create_table "unique_crates", force: true do |t|
+    t.integer  "crate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "unique_crates", ["crate_id"], name: "index_unique_crates_on_crate_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

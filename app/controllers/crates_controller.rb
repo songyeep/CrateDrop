@@ -15,6 +15,7 @@ class CratesController < ApplicationController
 
   def show
     @items = @crate.items
+    @unique_crate = UniqueCrate.new
     respond_with(@crate)
   end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :unique_crates
+
   resources :items
   resources :categories
   resources :crates
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
 
-  get '/checkout' => 'welcome#checkout'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

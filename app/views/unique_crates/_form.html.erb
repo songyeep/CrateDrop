@@ -1,0 +1,21 @@
+<%= form_for(@unique_crate) do |f| %>
+  <% if @unique_crate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unique_crate.errors.count, "error") %> prohibited this unique_crate from being saved:</h2>
+
+      <ul>
+      <% @unique_crate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :crate_id %><br>
+    <%= f.text_field :crate_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
