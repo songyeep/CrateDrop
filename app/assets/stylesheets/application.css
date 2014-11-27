@@ -63,7 +63,7 @@ p.header {
   font-family: "Top Secret";
   font-size: 90px;
   color: black;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -73,7 +73,7 @@ p.under-header {
   font-size: 25px;
   color: black;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
@@ -85,6 +85,5 @@ li#login > button {
 }
 
 .glyphicon {
-  color: white;
+  color: white
 }
-
