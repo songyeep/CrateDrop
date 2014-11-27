@@ -12,16 +12,20 @@
 
   <div class="row">
 
+
+
+
     <div class="col-md-4 left-thumbnails">
       <h1><%= @crate.name %></h1>
-      <%= form_for(@unique_crate) do |f| %>
-        <input type="hidden" name="unique_crate[item_ids][]" value="{{ item.id }}" ng-repeat="item in items | filter:{checked: true}">
-        <input type="hidden" name="unique_crate[crate_id]" value="<%= @crate.id %>">
-        <%= f.submit "Buy Crate" %>
-      <% end %>
+        <%= form_for(@unique_crate) do |f| %>
+          <input type="hidden" name="unique_crate[item_ids][]" value="{{ item.id }}" ng-repeat="item in items | filter:{checked: true}">
+          <input type="hidden" name="unique_crate[crate_id]" value="<%= @crate.id %>">
+          <%= f.submit "Buy Crate", class: "btn btn-large btn-primary"%>
+        <% end %>
 
 
-      </form>
+
+
       <div class="crate-background">
         <div ng-repeat="item in items | filter:{checked:true}">
             <img id="left-thumbnail-img" src="{{item.image.url}}" style="transform:rotate({{item.rotation}}deg)">
@@ -34,8 +38,10 @@
     <div class="col-md-8" id="scroll-content">
       <div>
         <div class="row" ng-repeat="item in items">
-          <label>
-            <div class="col-md-1"><input type="checkbox" ng-model="item.checked" /></div>
+          <label class="css-label">
+            <div class="col-md-1">
+              <input type="checkbox" ng-model="item.checked" class="css-checkbox"/>
+            </div>
             <div class="col-md-3">
               <div class="thumbnail-image">
                 <img src="{{item.image.url}}">
@@ -46,8 +52,7 @@
               <div class="caption">
                 <h3>{{item.name}}</h3>
                 <p>{{item.description}}</p>
-                <p>{{item.crate_id}}</p>
-                <p>{{item.price}}</p>
+                <p>$ {{item.price}}</p>
 
               </div>
             </div>

@@ -9,6 +9,10 @@ class UniqueCratesController < ApplicationController
   end
 
   def show
+    @total_price = 0
+    @unique_crate.items.each do |item|
+      @total_price += item.price
+    end
     respond_with(@unique_crate)
   end
 
@@ -22,7 +26,7 @@ class UniqueCratesController < ApplicationController
 
   def create
     @unique_crate = UniqueCrate.new(unique_crate_params)
-    @unique_crate.user = current_user.id
+    @unique_crate.user_id = current_user.id
     @unique_crate.save
     respond_with(@unique_crate)
   end
