@@ -33,16 +33,16 @@
             <% else %>
               <button class="btn btn-default">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+                <%= link_to " Sign up", new_user_registration_path, :class => 'navbar-link'  %>
               </button>
               <button class="btn btn-default">
                 <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                <%= link_to " Login", new_user_session_path, :class => 'navbar-link'  %>
               </button>
             <% end %>
 
             <button class="btn btn-default">
-              <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart</a>
+              <a href="/unique_crates/<%= @last_crate %>"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart</a>
             </button>
 
             <ul class="dropdown-menu" role="menu">

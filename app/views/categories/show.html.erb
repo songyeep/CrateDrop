@@ -6,7 +6,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<% @crates.each do |crate| %>
-  <div class="crate-list"><a href="/crates/<%= crate.id%>"><%= crate.name %></a></p>
-  <p id="crate-temp"><%= image_tag("crate.jpg") %></p></div>
-<% end %>
+<div class="container">
+  <% @crates.each do |crate| %>
+    <div class="crate-list"><a href="/crates/<%= crate.id%>"><%= crate.name %></a></p>
+    <p id="crate-temp"><%= image_tag(crate.image) %></p></div>
+  <% end %>
+</div>
