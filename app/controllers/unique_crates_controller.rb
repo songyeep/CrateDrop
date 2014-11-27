@@ -22,6 +22,7 @@ class UniqueCratesController < ApplicationController
 
   def create
     @unique_crate = UniqueCrate.new(unique_crate_params)
+    @unique_crate.user = current_user.id
     @unique_crate.save
     respond_with(@unique_crate)
   end
