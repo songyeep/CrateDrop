@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CrateDrop</title>
+  <title>Crate Drop | Not for Everyone</title>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -12,44 +12,39 @@
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-        </button>
-        <div><img src="/images/crateicon.png">
-        <%= link_to 'Crate Drop', root_url , {class:"navbar-brand"} %>
-        </div>
-      </div>
+
+      <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></a>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
 
         <ul class="nav navbar-nav navbar-right">
 
 
           <li id="login">
             <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong>.
-              <button><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></button>
-              <button><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
+              <strong><%= current_user.email %></strong>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%= link_to ' Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+              </button>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-eject" aria-hidden="true"></span>
+                <%= link_to " Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></button>
             <% else %>
-              <button><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></button>
-              <button><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></button>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+              </button>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              </button>
             <% end %>
-          </li>
 
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <button type="button" class="btn btn-default btn-xs">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            <button class="btn btn-default">
+              <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart</a>
             </button>
-            <span class="caret"></span></a>
+
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -73,6 +68,8 @@
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
+<p class="header">CRATE DROP</p>
+<p class="under-header">GIFT BUYING MADE EASY</p>
 
 <div class="contents">
   <%= yield %>
@@ -82,14 +79,6 @@
   <!-- Remember: javascript tag before adding jquery scripts -->
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js' %>
-
-  <!-- Menu Toggle Script -->
-  <script>
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-  });
-  </script>
 
 
 </body>

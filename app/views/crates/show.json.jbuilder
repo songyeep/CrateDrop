@@ -1,1 +1,1 @@
-json.extract! @crate, :id, :name, :created_at, :updated_at
+json.extract! @crate, :id, :name, :created_at, :updated_at, :items
