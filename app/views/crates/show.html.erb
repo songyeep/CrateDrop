@@ -20,7 +20,7 @@
         <%= form_for(@unique_crate) do |f| %>
           <input type="hidden" name="unique_crate[item_ids][]" value="{{ item.id }}" ng-repeat="item in items | filter:{checked: true}">
           <input type="hidden" name="unique_crate[crate_id]" value="<%= @crate.id %>">
-          <%= f.submit "Buy Crate", class: "btn btn-large btn-primary"%>
+          <%= f.submit "BUY CRATE", class: "btn btn-large btn-danger"%>
         <% end %>
       <br>
 
