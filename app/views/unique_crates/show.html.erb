@@ -66,9 +66,20 @@
                     <h4 class="text-right">Total $ <strong><%= @total_price %></strong></h4>
                   </div>
                   <div class="col-xs-3">
-                    <button type="button" class="btn btn-success btn-block">
-                      Checkout
-                    </button>
+
+
+                  <!-- Large modal -->
+                    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target=".bs-example-modal-lg">Checkout</button>
+
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <h1>Thanks for shopping! Your crate's on the way!</h1>
+                          <img src="https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/vMy9rNVMrj7Ltxf/cratedrop.jpg" alt="end image" id="end-image">
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
