@@ -31,7 +31,9 @@
                 <%= link_to(raw("<span class='glyphicon glyphicon-eject' aria-hidden='true'></span>"), destroy_user_session_path, method: :delete, :class => 'navbar-link')  %>
               </button>
               <button class="btn btn-default">
-                <a href="/unique_crates/<%= @last_crate %>"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                <% if @last_crate %>
+                  <a href="/unique_crates/<%= @last_crate %>"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                <% end %>
               </button>
 
             <% else %>
