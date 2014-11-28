@@ -7,7 +7,7 @@ cat6 = Category.create(name: "Survival", image: "https://s3.amazonaws.com/upload
 cat7 = Category.create(name: "Mash Crates", image: "https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/iywZPbehAQBdbhK/mysterbox.jpg")
 
 box1 = Crate.create(name: "Comics & Anime", category: cat1, image: 'https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/4jQrrBKbR5qEBy9/Geek%20Crate%20Cover.png')
-box2 = Crate.create(name: "Sci-Fi", category: cat1)
+box2 = Crate.create(name: "Sci-Fi", category: cat1, image: 'https://s3.amazonaws.com/uploads.hipchat.com/39979/1220036/GbzsyHqRw64i1vl/SciFi.png')
 box3 = Crate.create(name: "60's Music", category: cat2)
 box4 = Crate.create(name: "Games", category: cat2)
 box5 = Crate.create(name: "Japanese", category: cat3)

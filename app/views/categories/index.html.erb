@@ -1,15 +1,19 @@
-<ol class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li><a href="/categories">Categories</a></li>
-</ol>
+<div class="categories-index-container" style="display: none;">
 
-<div class="container" id="cat-container">
-<% @categories.each do |category| %>
-  <div class="box">
-    <a href="/categories/<%= category.id %>"><%= category.name %></a>
-    <div class="box-image">
-      <a href="/categories/<%= category.id %>"><%= image_tag(category.image) %></a>
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li><a href="/categories">Categories</a></li>
+  </ol>
+
+  <div class="container" id="cat-container">
+  <% @categories.each do |category| %>
+    <div class="box">
+      <a href="/categories/<%= category.id %>"><%= category.name %></a>
+      <div class="box-image">
+        <a href="/categories/<%= category.id %>"><%= image_tag(category.image) %></a>
+      </div>
     </div>
+  <% end %>
   </div>
-<% end %>
+
 </div>
