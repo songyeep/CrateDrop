@@ -65,6 +65,6 @@ Item.create(name: 'The Shaken Chemist Cocktail Kit', price: 15, description: ' W
 Item.create(name: 'Blade Runner Whiskey Glass', price: 10, description: 'I drink Sebastian, therefore I am', crate: box8, remote_image_url: 'http://media.fbxcdn.com/pic/p4346_column_grid_12.jpg')
 Item.create(name: 'Broadwalk Empire Bottle Artwork', price: 10, description: 'High quality giclée digital print on 230gsm matte paper (each is made to order)', crate: box8, remote_image_url: 'http://www.firebox.com/pic/p6218_column_grid_12.jpg')
 
-User.create(email: 'songyeep@gmail.com', password: 'password', password_confirmation: 'password')
+user = User.create(email: 'songyeep@gmail.com', password: 'password', password_confirmation: 'password')
 
 UniqueCrate.create(crate: box1, user: user)
