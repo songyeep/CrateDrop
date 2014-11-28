@@ -4,12 +4,13 @@
 
 #crate-temp {
   width: 400px;
-
+  height: 400px;
 }
 
 .crate-list {
   float: left;
-  padding: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 .box {
@@ -28,4 +29,9 @@
 
 #cat-container {
   text-align: center;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
 }

@@ -13,3 +13,5 @@ if window.location.pathname in ['/', '/categories']
           $('.categories-index-container').fadeIn()
       }
     )
+
+

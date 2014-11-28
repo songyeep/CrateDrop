@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def get_last_crate
-    @last_crate = current_user.unique_crates.last.id
+    if user_signed_in?
+      @last_crate = current_user.unique_crates.last.id
+    end
   end
 
 end
