@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li><a href="/categories">Categories</a></li>
+  <li><a href="/">Categories</a></li>
+
   <li><a href="/categories/<%= @crate.category_id %>"><%= @crate.category.name %></a></li>
   <li><a href="/crates/<%= @crate.id %>"><%= @crate.name %></a></li>
 </ol>
@@ -38,9 +38,9 @@
     <div class="col-md-8" id="scroll-content">
       <div>
         <div class="row well well-sm" ng-repeat="item in items" id="item-contents">
-          <label class="css-label">
+          <label class="checkboxtext">
             <div class="col-md-1">
-              <input type="checkbox" ng-model="item.checked" class="css-checkbox"/>
+              <input type="checkbox" class="checkbox" ng-model="item.checked" />
             </div>
             <div class="col-md-3">
               <div class="thumbnail-image">

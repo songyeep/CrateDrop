@@ -2,13 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-if window.location.pathname == '/'
+if window.location.pathname in ['/', '/categories']
   $('.title')
     .css('margin-top', 220)
     .animate(
       {'margin-top': 0},
       {
-        'duration': 2000,
+        'duration': 600,
         'complete': ->
           $('.categories-index-container').fadeIn()
       }
