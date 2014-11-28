@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
 #crate-temp {
   width: 400px;
   height: 400px;
